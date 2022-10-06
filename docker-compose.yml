@@ -11,7 +11,7 @@ services:
       MYSQL_USER: $DB_USER
       MYSQL_PASSWORD: $DB_PASSWORD
     volumes:
-      - ./dump/:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
+      - ./sql-entrypoint/dump.sql:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
       - ./dump/:/var/lib/mysql # Use bind mount
 
   php:
